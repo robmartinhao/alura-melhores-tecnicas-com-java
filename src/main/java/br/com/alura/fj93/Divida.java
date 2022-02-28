@@ -27,7 +27,11 @@ public class Divida {
         return cnpjCredor;
     }
 
-    public Pagamentos getPagamentos() {
-        return pagamentos;
+    public void registra(Pagamento pagamento) {
+        this.pagamentos.registra(pagamento);
+    }
+
+    public double getValorPago() {
+        return pagamentos.getValorPago();
     }
 }
