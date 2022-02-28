@@ -1,7 +1,5 @@
 package br.com.alura.fj93;
 
-import java.util.ArrayList;
-
 public class Divida {
 
     private double total;
