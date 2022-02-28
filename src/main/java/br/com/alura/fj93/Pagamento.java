@@ -1,3 +1,5 @@
+package br.com.alura.fj93;
+
 public class Pagamento {
 
     private String pagador;

@@ -1,3 +1,5 @@
+package br.com.alura.fj93;
+
 import java.util.HashMap;
 
 public class BalancoEmpresa {
