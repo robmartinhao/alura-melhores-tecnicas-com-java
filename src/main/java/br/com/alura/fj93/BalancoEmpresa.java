@@ -1,19 +1,22 @@
 package br.com.alura.fj93;
 
-import java.util.HashMap;
-
 public class BalancoEmpresa {
 
-    private final HashMap<Documento, Divida> dividas = new HashMap<>();
+    private ArmazenadorDeDividas armazenadorDeDividas;
+
+    public BalancoEmpresa(ArmazenadorDeDividas armazenadorDeDividas) {
+        this.armazenadorDeDividas = armazenadorDeDividas;
+    }
 
     public void registraDivida(Divida divida) {
-            dividas.put(divida.getDocumentoCredor(), divida);
+        armazenadorDeDividas.salva(divida);
     }
 
     public void pagaDivida(Documento documentoCredor, Pagamento pagamento) {
-        Divida divida = dividas.get(documentoCredor);
+        Divida divida = armazenadorDeDividas.carrega(documentoCredor);
         if (divida != null) {
             divida.registra(pagamento);
         }
+        armazenadorDeDividas.salva(divida);
     }
 }
