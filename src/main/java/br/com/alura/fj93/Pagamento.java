@@ -5,7 +5,7 @@ import java.util.Calendar;
 public class Pagamento {
 
     private String pagador;
-    private String cnpjPagador;
+    private Cnpj cnpjPagador;
     private double valor;
     private Calendar data;
 
@@ -17,11 +17,11 @@ public class Pagamento {
         this.pagador = pagador;
     }
 
-    public String getCnpjPagador() {
+    public Cnpj getCnpjPagador() {
         return cnpjPagador;
     }
 
-    public void setCnpjPagador(String cnpjPagador) {
+    public void setCnpjPagador(Cnpj cnpjPagador) {
         this.cnpjPagador = cnpjPagador;
     }
 

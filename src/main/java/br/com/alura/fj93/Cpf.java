@@ -1,16 +1,34 @@
 package br.com.alura.fj93;
 
-public class Cnpj implements Documento {
+import java.util.Objects;
 
-    private String valor;
+public class Cpf implements Documento {
+    private final String valor;
 
     public boolean ehValido() {
         return primeiroDigitoVerificador() == primeiroDigitoCorreto() &&
                 segundoDigitoVerificador() == segundoDigitoCorreto();
     }
 
-    public Cnpj(String valor) {
+    public Cpf(String valor) {
         this.valor = valor;
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cpf cpf = (Cpf) o;
+        return Objects.equals(valor, cpf.valor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(valor);
     }
 
     private int segundoDigitoCorreto() {
@@ -28,18 +46,5 @@ public class Cnpj implements Documento {
     private int primeiroDigitoVerificador() {
         //TODO
         return 1;
-    }
-
-    public String getValor() {
-        return valor;
-    }
-
-    public void setValor(String novoValor) {
-        this.valor = novoValor;
-    }
-
-    @Override
-    public String toString() {
-        return this.valor;
     }
 }
